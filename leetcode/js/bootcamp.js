@@ -97,5 +97,19 @@ function fizzBuzz(i) {
   }
 }
 
-// === 2/8 Fizz buzz ===
+// === 2/10 Array chuncking ===
+function chunk(array, size) {
+  const chunked = [];
 
+  for (let element of array) {
+    // the last [] in chunked
+    const last = chunked[chunked.length - 1];
+    // !last ->first time
+    if (!last || last.length === size) {
+      chunked.push([element]);
+    } else {
+      last.push(element);
+    };
+  };
+  return chunked;
+};
