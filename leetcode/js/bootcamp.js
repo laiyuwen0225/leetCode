@@ -97,19 +97,33 @@ function fizzBuzz(i) {
   }
 }
 
-// === 2/10 Array chuncking ===
+// === 2/10 Array chunking ===
+// function chunk(array, size) {
+//   const chunked = [];
+
+//   for (let element of array) {
+//     // the last [] in chunked
+//     const last = chunked[chunked.length - 1];
+//     // !last ->first time
+//     if (!last || last.length === size) {
+//       chunked.push([element]);
+//     } else {
+//       last.push(element);
+//     };
+//   };
+//   return chunked;
+// };
+
+// === 3/6 Array chunking ===
 function chunk(array, size) {
   const chunked = [];
+  let index = 0;
 
-  for (let element of array) {
-    // the last [] in chunked
-    const last = chunked[chunked.length - 1];
-    // !last ->first time
-    if (!last || last.length === size) {
-      chunked.push([element]);
-    } else {
-      last.push(element);
-    };
+  while (index < array.length) {
+    // firsttime:[index0,index0+2],second:[index2,index2+2]
+    chunked.push(array.slice(index, index + size));
+    index += size;
   };
+
   return chunked;
 };
