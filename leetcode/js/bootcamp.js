@@ -154,3 +154,36 @@ function anagrams(stringA, stringB) {
   }
 
 }
+// ===3/8 Anagram ===
+// function anagrams(stringA,stringB) {
+//   return cleanString(stringA) === cleanString(stringB);
+// }    
+// function cleanString(str) {
+//   return str.replace(/[^\w]/g,'').toLowerCase().split('').sort().join('');
+// }
+
+// ===3/8 Capitalization ===
+function capitalize(str) {
+  // 先把第一個字變大寫,因為前面無空白
+  let result = str[0].toUpperCase();
+
+  for( let i = 1; i < str.length; i++ ) {
+    if( str[i - 1] === ' ' ) {
+      result += str[i].toUpperCase();
+    } else {
+      result += str[i];
+    }
+  }
+  return result;
+}
+
+// ===3/8 Capitalization ===
+// function capitalize(str) {
+//   const words = [];
+
+//   for ( let word of str.split(' ')) {
+//     // slice(從此index開始到最後)
+//     words.push(word[0].toUpperCase() + word.slice(1));
+//   }
+//   return words.join(' ');
+// }
